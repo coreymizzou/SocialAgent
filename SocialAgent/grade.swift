@@ -1,4 +1,4 @@
-//
+/*
 //  grade.swift
 //  SocialAgent
 //
@@ -482,4 +482,4 @@ weightedTotal = weightedAutoGrade + weightedHumGrade
     }
     
 
-}
+}*/
