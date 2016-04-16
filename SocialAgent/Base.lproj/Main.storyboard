@@ -277,24 +277,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2D-fR-EmW">
-                                <rect key="frame" x="189" y="317" width="46" height="30"/>
-                                <state key="normal" title="Good"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ij-fn-So7">
-                                <rect key="frame" x="332" y="317" width="46" height="30"/>
-                                <state key="normal" title="Bad"/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jk9-da-TGP">
-                                <rect key="frame" x="174" y="409" width="253" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jk9-da-TGP">
+                                <rect key="frame" x="174" y="451" width="253" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbsdown.png" translatesAutoresizingMaskIntoConstraints="NO" id="vMi-nC-i9k">
+                                <rect key="frame" x="319" y="327" width="96" height="83"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ajC-Zw-yVx" appends="YES" id="RX6-hE-EDb"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbsup.png" translatesAutoresizingMaskIntoConstraints="NO" id="g4e-dE-FqM">
+                                <rect key="frame" x="175" y="327" width="100" height="83"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="GbL-EU-ea3" appends="YES" id="OmJ-yM-qJt"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0H-5d-ynW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="GbL-EU-ea3"/>
+                <tapGestureRecognizer id="ajC-Zw-yVx"/>
             </objects>
             <point key="canvasLocation" x="-541" y="1886"/>
         </scene>
@@ -355,17 +363,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="z7M-Wb-uKY">
-                                <rect key="frame" x="305" y="430" width="88" height="84"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="84" id="ea7-jj-qXv"/>
-                                    <constraint firstAttribute="width" constant="88" id="pV8-tM-ZYZ"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="rQn-91-OQi" appends="YES" id="4rf-5q-fSj"/>
-                                </connections>
-                            </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-iOS-App-Logo-Png.png" translatesAutoresizingMaskIntoConstraints="NO" id="ypk-vU-kxD">
                                 <rect key="frame" x="209" y="430" width="88" height="84"/>
                                 <gestureRecognizers/>
@@ -401,27 +398,36 @@
                                     <segue destination="9hY-Fw-2x8" kind="unwind" unwindAction="unwindToPostViewController:" id="3a7-1b-vas"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="RJw-ac-axd">
+                                <rect key="frame" x="311" y="430" width="88" height="84"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="gZT-xS-Ufq"/>
+                                    <constraint firstAttribute="height" constant="84" id="kTY-4C-k7v"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="d2g-0s-Stv" appends="YES" id="MEP-Tf-BEc"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="we0-dN-EAl" firstAttribute="centerX" secondItem="WTX-1q-wCA" secondAttribute="centerX" id="0qn-CJ-XMd"/>
                             <constraint firstItem="0Jy-vb-nr5" firstAttribute="top" secondItem="ypk-vU-kxD" secondAttribute="bottom" constant="86" id="2aR-XX-S84"/>
                             <constraint firstItem="WTX-1q-wCA" firstAttribute="leading" secondItem="1nA-mO-igl" secondAttribute="leading" id="37O-xT-OrR"/>
-                            <constraint firstItem="z7M-Wb-uKY" firstAttribute="top" secondItem="r7Z-wR-F5Y" secondAttribute="bottom" constant="13" id="4Uv-X3-2tu"/>
                             <constraint firstItem="wd6-z0-I7R" firstAttribute="top" secondItem="WTX-1q-wCA" secondAttribute="bottom" constant="13" id="4vp-QD-gmy"/>
                             <constraint firstItem="uE8-Qo-aT2" firstAttribute="leading" secondItem="wd6-z0-I7R" secondAttribute="leading" id="5XD-yd-3aN"/>
                             <constraint firstItem="SZ6-I5-vVZ" firstAttribute="top" secondItem="wd6-z0-I7R" secondAttribute="bottom" constant="20" id="CuB-g8-Ne2"/>
                             <constraint firstItem="SZ6-I5-vVZ" firstAttribute="trailing" secondItem="wd6-z0-I7R" secondAttribute="trailing" id="Dcp-WL-zwb"/>
-                            <constraint firstItem="z7M-Wb-uKY" firstAttribute="top" secondItem="ypk-vU-kxD" secondAttribute="top" id="Dlm-kz-pk1"/>
                             <constraint firstItem="WTX-1q-wCA" firstAttribute="top" secondItem="Z0C-AO-nzc" secondAttribute="bottom" id="FHk-G8-2IF"/>
-                            <constraint firstItem="z7M-Wb-uKY" firstAttribute="leading" secondItem="r7Z-wR-F5Y" secondAttribute="trailing" constant="-24" id="GwH-mT-6OC"/>
-                            <constraint firstItem="z7M-Wb-uKY" firstAttribute="leading" secondItem="ypk-vU-kxD" secondAttribute="trailing" constant="8" symbolic="YES" id="HNt-Bi-cKN"/>
-                            <constraint firstItem="ypk-vU-kxD" firstAttribute="width" secondItem="z7M-Wb-uKY" secondAttribute="height" multiplier="22:21" id="MK0-4Q-8bR"/>
+                            <constraint firstItem="RJw-ac-axd" firstAttribute="leading" secondItem="ypk-vU-kxD" secondAttribute="trailing" constant="14" id="GGQ-k0-q5F"/>
+                            <constraint firstItem="RJw-ac-axd" firstAttribute="bottom" secondItem="ypk-vU-kxD" secondAttribute="bottom" id="Ipy-Iw-Wth"/>
                             <constraint firstItem="r7Z-wR-F5Y" firstAttribute="leading" secondItem="ypk-vU-kxD" secondAttribute="trailing" constant="-27" id="NO2-Va-5Nf"/>
                             <constraint firstItem="uE8-Qo-aT2" firstAttribute="top" secondItem="we0-dN-EAl" secondAttribute="bottom" constant="2" id="NsI-tc-BST"/>
-                            <constraint firstItem="z7M-Wb-uKY" firstAttribute="bottom" secondItem="ypk-vU-kxD" secondAttribute="bottom" id="OUL-V4-CCr"/>
+                            <constraint firstItem="RJw-ac-axd" firstAttribute="top" secondItem="ypk-vU-kxD" secondAttribute="top" id="PKq-hW-URW"/>
                             <constraint firstItem="we0-dN-EAl" firstAttribute="top" secondItem="wd6-z0-I7R" secondAttribute="bottom" id="POT-Vt-C7g"/>
                             <constraint firstItem="r7Z-wR-F5Y" firstAttribute="centerX" secondItem="T7a-ip-lKS" secondAttribute="centerX" id="TqK-Xm-as4"/>
+                            <constraint firstItem="RJw-ac-axd" firstAttribute="width" secondItem="ypk-vU-kxD" secondAttribute="height" multiplier="22:21" id="XEp-LM-gxy"/>
                             <constraint firstItem="r7Z-wR-F5Y" firstAttribute="centerX" secondItem="we0-dN-EAl" secondAttribute="centerX" id="Zf9-1a-iPJ"/>
                             <constraint firstItem="uE8-Qo-aT2" firstAttribute="baseline" secondItem="SZ6-I5-vVZ" secondAttribute="firstBaseline" id="dYa-rC-chZ"/>
                             <constraint firstItem="we0-dN-EAl" firstAttribute="centerX" secondItem="wd6-z0-I7R" secondAttribute="centerX" id="dpz-eX-sOl"/>
@@ -441,7 +447,7 @@
                         <outlet property="submit" destination="SZ6-I5-vVZ" id="xAq-88-Be6"/>
                         <outlet property="textFromPost" destination="WTX-1q-wCA" id="SBg-eV-nYW"/>
                         <outlet property="total" destination="we0-dN-EAl" id="uGS-WV-Kjp"/>
-                        <outlet property="twitterImage" destination="z7M-Wb-uKY" id="Cix-8J-EXI"/>
+                        <outlet property="twitterImage" destination="RJw-ac-axd" id="KOe-gM-wEE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1H-5h-gFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -451,9 +457,9 @@
                         <action selector="facebookButton:" destination="hHI-VK-QQ3" id="QYy-bx-KbZ"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="rQn-91-OQi">
+                <tapGestureRecognizer id="d2g-0s-Stv">
                     <connections>
-                        <action selector="twitterButton:" destination="hHI-VK-QQ3" id="J2T-Xz-WTc"/>
+                        <action selector="twitterButton:" destination="hHI-VK-QQ3" id="w38-Ca-Bho"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -652,6 +658,8 @@
         <image name="key-32.png" width="32" height="32"/>
         <image name="socialagentlogo1 copy.png" width="450" height="470"/>
         <image name="sociallogo copy.png" width="418" height="60"/>
+        <image name="thumbsdown.png" width="275" height="288"/>
+        <image name="thumbsup.png" width="284" height="286"/>
         <image name="twitter-logo.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>

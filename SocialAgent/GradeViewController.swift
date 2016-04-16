@@ -392,6 +392,8 @@ var dictionary: [String] =
 class GradeViewController: UIViewController {
     
     
+    
+    @IBOutlet weak var test: UIImageView!
     @IBOutlet weak var twitterImage: UIImageView!
     @IBOutlet weak var cannotPost: UILabel!
     @IBOutlet weak var postLabel: UILabel!
@@ -495,8 +497,8 @@ class GradeViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
-    
-    
+        
+
     /*
      //Posting to facebook
      */
@@ -512,6 +514,9 @@ class GradeViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
+    }
+    @IBAction func test(sender: AnyObject) {
+        print("clicked")
     }
     
     @IBAction func anotherTest(sender: AnyObject) {

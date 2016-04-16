@@ -44,6 +44,8 @@
 		799DED101CC1981700E6BADE /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799DED0C1CC1981700E6BADE /* TwitterKit.framework */; };
 		799DED111CC1981700E6BADE /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 799DED0D1CC1981700E6BADE /* TwitterKitResources.bundle */; };
 		799DED121CC1981700E6BADE /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799DED0E1CC1981700E6BADE /* TwitterCore.framework */; };
+		799DED151CC201EB00E6BADE /* thumbsup.png in Resources */ = {isa = PBXBuildFile; fileRef = 799DED141CC201EB00E6BADE /* thumbsup.png */; };
+		799DED171CC201F000E6BADE /* thumbsdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 799DED161CC201F000E6BADE /* thumbsdown.png */; };
 		79B302061C9F255000881D60 /* alltwitter-twitter-bird-logo-white-on-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B302051C9F255000881D60 /* alltwitter-twitter-bird-logo-white-on-blue.png */; };
 		79B3020E1C9F283300881D60 /* Facebook-iOS-App-Logo-Png.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B3020D1C9F283300881D60 /* Facebook-iOS-App-Logo-Png.png */; };
 		79B302101C9F288800881D60 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B3020F1C9F288800881D60 /* twitter-logo.png */; };
@@ -116,6 +118,8 @@
 		799DED0D1CC1981700E6BADE /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		799DED0E1CC1981700E6BADE /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		799DED131CC1997200E6BADE /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		799DED141CC201EB00E6BADE /* thumbsup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsup.png; sourceTree = "<group>"; };
+		799DED161CC201F000E6BADE /* thumbsdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsdown.png; sourceTree = "<group>"; };
 		79B302051C9F255000881D60 /* alltwitter-twitter-bird-logo-white-on-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alltwitter-twitter-bird-logo-white-on-blue.png"; sourceTree = "<group>"; };
 		79B3020D1C9F283300881D60 /* Facebook-iOS-App-Logo-Png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-iOS-App-Logo-Png.png"; sourceTree = "<group>"; };
 		79B3020F1C9F288800881D60 /* twitter-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-logo.png"; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 		79DA56C81C9CBB6A000ED436 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				799DED141CC201EB00E6BADE /* thumbsup.png */,
+				799DED161CC201F000E6BADE /* thumbsdown.png */,
 				798028A51CBC7BD5009471FF /* socialagentlogo1 copy.png */,
 				798028A61CBC7BD5009471FF /* sociallogo copy.png */,
 				79B302051C9F255000881D60 /* alltwitter-twitter-bird-logo-white-on-blue.png */,
@@ -384,8 +390,10 @@
 				79B302221C9F52A800881D60 /* socialagentlogo1.png in Resources */,
 				79B3022A1C9F61A600881D60 /* LaunchScreen.storyboard in Resources */,
 				795DBEEF1CA069FE00F7EAFF /* home-32.png in Resources */,
+				799DED171CC201F000E6BADE /* thumbsdown.png in Resources */,
 				672BA5C11C7C1CD300E50A2A /* Assets.xcassets in Resources */,
 				672BA5BC1C7C1CD300E50A2A /* Main.storyboard in Resources */,
+				799DED151CC201EB00E6BADE /* thumbsup.png in Resources */,
 				79B3020E1C9F283300881D60 /* Facebook-iOS-App-Logo-Png.png in Resources */,
 				79B302281C9F5ACB00881D60 /* sociallogo.png in Resources */,
 				795DBEF91CA06D4000F7EAFF /* attention-32.png in Resources */,
