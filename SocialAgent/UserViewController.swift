@@ -20,8 +20,8 @@ class UserViewController: UIViewController {
         }
         else {
             let alertView:UIAlertView = UIAlertView()
-            alertView.title = "Incorrect Password"
-            alertView.message = "Please enter Password"
+            alertView.title = "Invalid Code"
+            alertView.message = "Please enter Code"
             alertView.delegate = self
             alertView.addButtonWithTitle("OK")
             alertView.show()
