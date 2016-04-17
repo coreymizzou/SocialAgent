@@ -253,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="305" y="1561"/>
         </scene>
-        <!--View Controller-->
+        <!--Review View Controller-->
         <scene sceneID="gVR-Lb-IUN">
             <objects>
-                <viewController storyboardIdentifier="5" id="Rls-Up-NSW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="5" id="Rls-Up-NSW" customClass="ReviewViewController" customModule="SocialAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="alb-7q-zrC"/>
                         <viewControllerLayoutGuide type="bottom" id="r2H-gS-5CT"/>
@@ -301,10 +301,18 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0H-5d-ynW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="GbL-EU-ea3"/>
-                <tapGestureRecognizer id="ajC-Zw-yVx"/>
+                <tapGestureRecognizer id="GbL-EU-ea3">
+                    <connections>
+                        <action selector="goodReview:" destination="Rls-Up-NSW" id="V1z-U1-fl9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ajC-Zw-yVx">
+                    <connections>
+                        <action selector="badReview:" destination="Rls-Up-NSW" id="Ee9-lh-oWW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-541" y="1886"/>
+            <point key="canvasLocation" x="-673" y="1656"/>
         </scene>
         <!--Grade-->
         <scene sceneID="qW5-yt-ypi">
@@ -566,7 +574,7 @@
         <!--Review-->
         <scene sceneID="me8-fb-gmM">
             <objects>
-                <viewController storyboardIdentifier="8" id="xh2-zu-pxR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="8" id="xh2-zu-pxR" customClass="UserViewController" customModule="SocialAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1ol-iq-7yb"/>
                         <viewControllerLayoutGuide type="bottom" id="9vu-7K-vtb"/>
@@ -581,14 +589,35 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMJ-A4-6NQ">
+                                <rect key="frame" x="264" y="285" width="73" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="xh2-zu-pxR" eventType="touchUpInside" id="Yv3-U7-OSd"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMj-gi-ecg">
+                                <rect key="frame" x="252" y="206" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8Yo-ie-c5w" firstAttribute="centerX" secondItem="dU4-Y4-oME" secondAttribute="centerX" id="42M-Nl-3Be"/>
+                            <constraint firstItem="aMj-gi-ecg" firstAttribute="top" secondItem="8Yo-ie-c5w" secondAttribute="bottom" constant="40" id="G3a-ht-FfX"/>
+                            <constraint firstItem="xMJ-A4-6NQ" firstAttribute="top" secondItem="aMj-gi-ecg" secondAttribute="bottom" constant="49" id="Plu-P5-SES"/>
+                            <constraint firstItem="xMJ-A4-6NQ" firstAttribute="width" secondItem="aMj-gi-ecg" secondAttribute="height" multiplier="73:30" id="QO7-ae-xsq"/>
+                            <constraint firstItem="xMJ-A4-6NQ" firstAttribute="centerX" secondItem="dU4-Y4-oME" secondAttribute="centerX" id="fNg-iu-mmF"/>
+                            <constraint firstItem="aMj-gi-ecg" firstAttribute="centerX" secondItem="dU4-Y4-oME" secondAttribute="centerX" id="qjy-gF-jBm"/>
                             <constraint firstItem="8Yo-ie-c5w" firstAttribute="top" secondItem="1ol-iq-7yb" secondAttribute="bottom" constant="125" id="vkJ-ZM-dYA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Review" image="key-32.png" id="DCs-KY-iQU"/>
+                    <connections>
+                        <outlet property="userCode" destination="aMj-gi-ecg" id="OsM-8V-gqH"/>
+                        <segue destination="Rls-Up-NSW" kind="presentation" identifier="reviewSegue" id="fYC-My-evK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acQ-1W-9eR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

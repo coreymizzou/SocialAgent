@@ -46,6 +46,8 @@
 		799DED121CC1981700E6BADE /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799DED0E1CC1981700E6BADE /* TwitterCore.framework */; };
 		799DED151CC201EB00E6BADE /* thumbsup.png in Resources */ = {isa = PBXBuildFile; fileRef = 799DED141CC201EB00E6BADE /* thumbsup.png */; };
 		799DED171CC201F000E6BADE /* thumbsdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 799DED161CC201F000E6BADE /* thumbsdown.png */; };
+		799DED371CC4339200E6BADE /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799DED361CC4339200E6BADE /* ReviewViewController.swift */; };
+		799DED391CC4339F00E6BADE /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799DED381CC4339F00E6BADE /* UserViewController.swift */; };
 		79B302061C9F255000881D60 /* alltwitter-twitter-bird-logo-white-on-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B302051C9F255000881D60 /* alltwitter-twitter-bird-logo-white-on-blue.png */; };
 		79B3020E1C9F283300881D60 /* Facebook-iOS-App-Logo-Png.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B3020D1C9F283300881D60 /* Facebook-iOS-App-Logo-Png.png */; };
 		79B302101C9F288800881D60 /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B3020F1C9F288800881D60 /* twitter-logo.png */; };
@@ -120,6 +122,8 @@
 		799DED131CC1997200E6BADE /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		799DED141CC201EB00E6BADE /* thumbsup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsup.png; sourceTree = "<group>"; };
 		799DED161CC201F000E6BADE /* thumbsdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsdown.png; sourceTree = "<group>"; };
+		799DED361CC4339200E6BADE /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		799DED381CC4339F00E6BADE /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		79B302051C9F255000881D60 /* alltwitter-twitter-bird-logo-white-on-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alltwitter-twitter-bird-logo-white-on-blue.png"; sourceTree = "<group>"; };
 		79B3020D1C9F283300881D60 /* Facebook-iOS-App-Logo-Png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-iOS-App-Logo-Png.png"; sourceTree = "<group>"; };
 		79B3020F1C9F288800881D60 /* twitter-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-logo.png"; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 				79B5F6591CA367380068B052 /* FriendList.swift */,
 				67CF67721C8947E2000D1ACC /* PostViewController.swift */,
 				044B530E1C8E94DE0092ECBD /* GradeViewController.swift */,
+				799DED381CC4339F00E6BADE /* UserViewController.swift */,
+				799DED361CC4339200E6BADE /* ReviewViewController.swift */,
 				799DED131CC1997200E6BADE /* Bridging-Header.h */,
 				79DA56C81C9CBB6A000ED436 /* Supporting Files */,
 			);
@@ -439,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79961A261C9A627A00C8A9D2 /* PostViewController.swift in Sources */,
+				799DED391CC4339F00E6BADE /* UserViewController.swift in Sources */,
 				672BA5B91C7C1CD300E50A2A /* ViewController.swift in Sources */,
 				677AA08B1CBC704100643173 /* facebookFriendsViewController.swift in Sources */,
 				672BA5B71C7C1CD300E50A2A /* AppDelegate.swift in Sources */,
@@ -446,6 +453,7 @@
 				79961A251C9A627700C8A9D2 /* grade.swift in Sources */,
 				672BA5BF1C7C1CD300E50A2A /* SocialAgent.xcdatamodeld in Sources */,
 				044B530F1C8E94DE0092ECBD /* GradeViewController.swift in Sources */,
+				799DED371CC4339200E6BADE /* ReviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
