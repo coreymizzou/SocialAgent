@@ -495,86 +495,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdY-CE-0AK">
-                                <rect key="frame" x="322" y="66" width="86" height="45"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-iOS-App-Logo-Png.png" translatesAutoresizingMaskIntoConstraints="NO" id="mgR-0v-bkc">
+                                <rect key="frame" x="183" y="261" width="98" height="92"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="EQ5-mN-rnh"/>
+                                    <constraint firstAttribute="height" constant="92" id="EdP-8x-oKl"/>
+                                    <constraint firstAttribute="width" constant="98" id="EiT-Ou-Bxc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="lqM-75-Z2w"/>
                                 </constraints>
-                                <state key="normal" title="Twitter"/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BLB-Hh-w8n">
-                                <rect key="frame" x="192" y="110" width="216" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MfP-4B-xmX" appends="YES" id="ZAU-Nt-4Ng"/>
+                                </connections>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick From Your Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q77-gd-pEl">
-                                <rect key="frame" x="209" y="44" width="199" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="199" id="m0A-zW-flZ"/>
-                                </constraints>
+                                <rect key="frame" x="201" y="53" width="199" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6g-eE-jQm">
-                                <rect key="frame" x="416" y="109" width="46" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gjH-yt-peR">
+                                <rect key="frame" x="183" y="114" width="235" height="118"/>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="jef-gE-SQQ"/>
+                                    <constraint firstAttribute="height" constant="118" id="2gh-lL-3wk"/>
+                                    <constraint firstAttribute="width" constant="235" id="ssB-v9-GVt"/>
                                 </constraints>
-                                <state key="normal" title="Go!"/>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r4F-cO-cd8">
-                                <rect key="frame" x="180" y="154" width="240" height="268"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Select friends from either platform to send your unique reviewer code to. They will be able to see and review your potential posts.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wuT-As-km9">
+                                <rect key="frame" x="302" y="261" width="98" height="92"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="yCN-Zb-hBr"/>
+                                    <constraint firstAttribute="width" constant="98" id="K7k-4S-kXW"/>
+                                    <constraint firstAttribute="height" constant="92" id="kBP-wP-m6D"/>
                                 </constraints>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTh-Br-GQL">
-                                <rect key="frame" x="192" y="66" width="86" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="bfb-OG-VIr"/>
-                                </constraints>
-                                <state key="normal" title="Facebook"/>
                                 <connections>
-                                    <segue destination="Lia-7N-2BV" kind="presentation" id="RPU-zb-HrF"/>
+                                    <outletCollection property="gestureRecognizers" destination="eMo-xN-gVV" appends="YES" id="y7t-iw-hLA"/>
                                 </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r4F-cO-cd8" firstAttribute="top" secondItem="UTh-Br-GQL" secondAttribute="bottom" constant="43" id="0vW-0F-ZW3"/>
-                            <constraint firstItem="UTh-Br-GQL" firstAttribute="leading" secondItem="BLB-Hh-w8n" secondAttribute="leading" id="5TF-WV-o0c"/>
-                            <constraint firstItem="BLB-Hh-w8n" firstAttribute="baseline" secondItem="d6g-eE-jQm" secondAttribute="baseline" id="6wK-ed-8ex"/>
-                            <constraint firstItem="Q77-gd-pEl" firstAttribute="trailing" secondItem="sdY-CE-0AK" secondAttribute="trailing" id="7D7-9n-tH1"/>
-                            <constraint firstItem="BLB-Hh-w8n" firstAttribute="top" secondItem="Q77-gd-pEl" secondAttribute="bottom" constant="45" id="7sH-5q-nZe"/>
-                            <constraint firstItem="d6g-eE-jQm" firstAttribute="leading" secondItem="BLB-Hh-w8n" secondAttribute="trailing" constant="8" symbolic="YES" id="C6M-xB-o4Z"/>
-                            <constraint firstItem="d6g-eE-jQm" firstAttribute="leading" secondItem="sdY-CE-0AK" secondAttribute="trailing" constant="8" symbolic="YES" id="Cuq-Vm-rhR"/>
-                            <constraint firstItem="sdY-CE-0AK" firstAttribute="leading" secondItem="UTh-Br-GQL" secondAttribute="trailing" constant="44" id="FBv-Zm-t1O"/>
-                            <constraint firstItem="UTh-Br-GQL" firstAttribute="top" secondItem="Q77-gd-pEl" secondAttribute="bottom" constant="1" id="Hxe-Gg-HKs"/>
-                            <constraint firstItem="UTh-Br-GQL" firstAttribute="baseline" secondItem="sdY-CE-0AK" secondAttribute="firstBaseline" id="IQV-hu-oI9"/>
-                            <constraint firstItem="UTh-Br-GQL" firstAttribute="top" secondItem="sdY-CE-0AK" secondAttribute="top" id="NMQ-n3-3tX"/>
-                            <constraint firstItem="Q77-gd-pEl" firstAttribute="leading" secondItem="BLB-Hh-w8n" secondAttribute="leading" id="Pna-A3-WVK"/>
-                            <constraint firstItem="sdY-CE-0AK" firstAttribute="baseline" secondItem="UTh-Br-GQL" secondAttribute="firstBaseline" id="bWh-bX-A5n"/>
-                            <constraint firstItem="BLB-Hh-w8n" firstAttribute="centerX" secondItem="r4F-cO-cd8" secondAttribute="centerX" id="cj3-yI-WYk"/>
-                            <constraint firstItem="Q77-gd-pEl" firstAttribute="centerX" secondItem="sf6-ai-cAo" secondAttribute="centerX" id="iiq-fw-DWn"/>
-                            <constraint firstItem="Q77-gd-pEl" firstAttribute="top" secondItem="GMk-Tc-FF7" secondAttribute="bottom" constant="24" id="qHQ-S2-jbx"/>
-                            <constraint firstItem="r4F-cO-cd8" firstAttribute="top" secondItem="BLB-Hh-w8n" secondAttribute="bottom" constant="14" id="sh6-1L-JNv"/>
-                            <constraint firstItem="xPx-dB-c85" firstAttribute="top" secondItem="r4F-cO-cd8" secondAttribute="bottom" constant="129" id="vlF-fd-nXs"/>
-                            <constraint firstItem="Q77-gd-pEl" firstAttribute="top" secondItem="BLB-Hh-w8n" secondAttribute="bottom" constant="26" id="xad-HZ-GIr"/>
-                            <constraint firstItem="BLB-Hh-w8n" firstAttribute="centerX" secondItem="sf6-ai-cAo" secondAttribute="centerX" id="z39-ed-M9f"/>
+                            <constraint firstItem="Q77-gd-pEl" firstAttribute="trailing" secondItem="wuT-As-km9" secondAttribute="trailing" id="3ZH-dA-iF8"/>
+                            <constraint firstItem="gjH-yt-peR" firstAttribute="centerX" secondItem="sf6-ai-cAo" secondAttribute="centerX" id="638-sC-XHN"/>
+                            <constraint firstItem="gjH-yt-peR" firstAttribute="top" secondItem="sf6-ai-cAo" secondAttribute="top" constant="114" id="9Z1-4g-LaW"/>
+                            <constraint firstItem="gjH-yt-peR" firstAttribute="leading" secondItem="mgR-0v-bkc" secondAttribute="leading" id="Dxf-QQ-Le1"/>
+                            <constraint firstItem="xPx-dB-c85" firstAttribute="top" secondItem="wuT-As-km9" secondAttribute="bottom" constant="198" id="IMn-9k-RTJ"/>
+                            <constraint firstItem="wuT-As-km9" firstAttribute="leading" secondItem="mgR-0v-bkc" secondAttribute="trailing" constant="21" id="OVC-O4-NGP"/>
+                            <constraint firstItem="wuT-As-km9" firstAttribute="top" secondItem="mgR-0v-bkc" secondAttribute="top" id="QD0-pP-JLd"/>
+                            <constraint firstItem="Q77-gd-pEl" firstAttribute="top" secondItem="GMk-Tc-FF7" secondAttribute="bottom" constant="33" id="Uf7-L5-Q3H"/>
+                            <constraint firstItem="wuT-As-km9" firstAttribute="bottom" secondItem="mgR-0v-bkc" secondAttribute="bottom" id="bqY-mf-KyK"/>
+                            <constraint firstItem="wuT-As-km9" firstAttribute="top" secondItem="gjH-yt-peR" secondAttribute="bottom" constant="29" id="iUS-yx-cbg"/>
+                            <constraint firstItem="Q77-gd-pEl" firstAttribute="centerX" secondItem="gjH-yt-peR" secondAttribute="centerX" id="y4Q-3k-50Y"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Pna-A3-WVK"/>
-                                <exclude reference="iiq-fw-DWn"/>
-                                <exclude reference="xad-HZ-GIr"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="tnE-ML-x5Y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLK-s5-bqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MfP-4B-xmX">
+                    <connections>
+                        <segue destination="Lia-7N-2BV" kind="presentation" id="m1J-On-7eA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="eMo-xN-gVV"/>
             </objects>
             <point key="canvasLocation" x="-673" y="-670"/>
         </scene>
