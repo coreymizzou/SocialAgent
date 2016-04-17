@@ -77,6 +77,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             if result.grantedPermissions.contains("email")
             {
                 // Do work
+                
             }
         }
     }
