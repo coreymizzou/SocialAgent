@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData
+import Parse
+import Bolts
 
 class UserViewController: UIViewController {
 
@@ -15,7 +18,7 @@ class UserViewController: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         let password:NSString = userCode.text!
         
-        if (password.isEqualToString("12345") ) {
+        if (password.isEqualToString("1234") ) {
             self.performSegueWithIdentifier("reviewSegue", sender: self)
         }
         else {
@@ -26,7 +29,25 @@ class UserViewController: UIViewController {
             alertView.addButtonWithTitle("OK")
             alertView.show()
         }
+        
+        
     }
+    
+    func saveCodeInCoreData(code: String) {
+        let appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        let newcode = NSEntityDescription.insertNewObjectForEntityForName("FriendsCodes", inManagedObjectContext: context)
+        newcode.setValue(code, forKey: "code")
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Could not save into core data \(error), \(error.userInfo)")
+        }
+        
+        print("code saved in core (FB)")
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
