@@ -85,6 +85,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                     print(strFirstName)
                     print(strLastName)
                     print(strFacebookID)
+                    //save code
                     self.saveCodeInCoreData(strFacebookID)
                 }
             }
