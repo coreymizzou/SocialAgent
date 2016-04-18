@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 import Fabric
 import TwitterKit
-
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Key to the repository, where I'm storing the data for our app.
+        Parse.setApplicationId("C9aUtlwQdVkRIasRtjFAXeLT13eBP8sbrgLlJO1u", clientKey: "T7MwxA9tsIeAEX912TvKOJw46b8bgZDcssq5Gu1j")
+        
         Fabric.with([Twitter.self])
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

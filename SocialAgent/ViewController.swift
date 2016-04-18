@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import TwitterKit
+import CoreData
 
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
@@ -84,9 +85,25 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                     print(strFirstName)
                     print(strLastName)
                     print(strFacebookID)
+                    self.saveCodeInCoreData(strFacebookID)
                 }
             }
         }
+    }
+    
+    func saveCodeInCoreData(code: String) {
+        let appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        let newcode = NSEntityDescription.insertNewObjectForEntityForName("MyCode", inManagedObjectContext: context)
+        newcode.setValue(code, forKey: "code")
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Could not save into core data \(error), \(error.userInfo)")
+        }
+        
+        print("code saved in core (FB)")
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {

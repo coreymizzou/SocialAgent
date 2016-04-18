@@ -9,6 +9,9 @@
 import UIKit
 import Social
 import Foundation
+import Parse
+import Bolts
+import CoreData
 
 
 //list of words
@@ -403,7 +406,7 @@ class GradeViewController: UIViewController {
     @IBOutlet weak var submit: UIButton!
     
     var copyOfPost: String?
-    
+    var userCode: String?
     //var score = Grade.sharedInstance
     var newTotal : Double!
     
@@ -470,12 +473,37 @@ class GradeViewController: UIViewController {
             newTotal = autoGrade
             total.text = String(newTotal)
         }
+        
+        
+        
         super.viewDidLoad()
         
         
         // Do any additional setup after loading the view.
     }
     
+    func loadUserCode() {
+        var codes = [NSManagedObject]()
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        let request = NSFetchRequest(entityName: "MyCode")
+        
+        do {
+            let results = try context.executeFetchRequest(request)
+            codes = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("there was an error fetching \(error)")
+        }
+        
+        if(codes.count != 1) {
+            print("there was a problem, code auto set to '1234'")
+            userCode = "1234"
+        } else {
+            let code = codes[0]
+            userCode = code.valueForKey("code") as? String
+        }
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -515,6 +543,24 @@ class GradeViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func savePost(sender: AnyObject) {
+        print("here begin save post")
+        let postObject = PFObject(className: "Post")
+        postObject["Text"] = textFromPost.text
+        postObject["Score"] = newTotal
+        postObject["DictionaryScore"] = newTotal
+        postObject["ReviewerScore"] = 0
+        postObject["NumberOfReviews"] = 0
+        postObject["Poster_Id"] = userCode
+        postObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("Object has been saved.")
+        }
+
+    }
+    
+    @IBOutlet weak var savePost: UIButton!
+    
     @IBAction func test(sender: AnyObject) {
         print("clicked")
     }
