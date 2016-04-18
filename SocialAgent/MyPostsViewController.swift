@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Bolts
+import CoreData
 
 class MyPostsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -18,19 +19,44 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
         var text = ""
         var id = ""
     }
+    var userCode = "1234"
     
     var postArray: [PostInfo] = [PostInfo]()
     var count = 0
     
     override func viewWillAppear(animated: Bool) {
+        loadMyCode()
         loadPosts()
         myPostsTableView.reloadData()
+    }
+    
+    func loadMyCode() {
+        var codes = [NSManagedObject]()
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        let request = NSFetchRequest(entityName: "MyCode")
+        
+        do {
+            let results = try context.executeFetchRequest(request)
+            codes = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("there was an error fetching \(error)")
+        }
+        
+        if(codes.count != 1) {
+            print("there was a problem, code auto set to load posts from '1235'")
+            userCode = "1235"
+        } else {
+            let code = codes[0]
+            userCode = (code.valueForKey("code") as? String)!
+        }
+
     }
     
     func loadPosts() {
         let query = PFQuery(className: "Post")
         var postInfoNode = PostInfo()
-        query.whereKey("Poster_Id", equalTo: "1234")
+        query.whereKey("Poster_Id", equalTo: userCode)
         
         /*let objects = query.findObjects()
          

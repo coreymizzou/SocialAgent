@@ -406,7 +406,7 @@ class GradeViewController: UIViewController {
     @IBOutlet weak var submit: UIButton!
     
     var copyOfPost: String?
-    var userCode: String?
+    var userCode = "1234"
     //var score = Grade.sharedInstance
     var newTotal : Double!
     
@@ -474,7 +474,7 @@ class GradeViewController: UIViewController {
             total.text = String(newTotal)
         }
         
-        
+        loadUserCode()
         
         super.viewDidLoad()
         
@@ -487,20 +487,20 @@ class GradeViewController: UIViewController {
         let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         let context:NSManagedObjectContext = appDel.managedObjectContext
         let request = NSFetchRequest(entityName: "MyCode")
-        
+        print("Ready to execute request")
         do {
             let results = try context.executeFetchRequest(request)
             codes = results as! [NSManagedObject]
         } catch let error as NSError {
             print("there was an error fetching \(error)")
         }
-        
+        print("executed")
         if(codes.count != 1) {
-            print("there was a problem, code auto set to '1234'")
-            userCode = "1234"
+            print("there was a problem, code auto set to '1235'")
+            userCode = "1235"
         } else {
             let code = codes[0]
-            userCode = code.valueForKey("code") as? String
+            userCode = (code.valueForKey("code") as? String)!
         }
         
     }
