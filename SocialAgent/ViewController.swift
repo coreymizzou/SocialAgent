@@ -77,6 +77,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             if result.grantedPermissions.contains("email")
             {
                 // Do work
+                FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"first_name, last_name, id"]).startWithCompletionHandler { (connection, result, error) -> Void in
+                    let strFirstName: String = (result.objectForKey("first_name") as? String)!
+                    let strLastName: String = (result.objectForKey("last_name") as? String)!
+                    let strFacebookID: String = (result.objectForKey("id") as? String)!
+                    print(strFirstName)
+                    print(strLastName)
+                    print(strFacebookID)
+                }
             }
         }
     }
