@@ -16,21 +16,7 @@ class UserViewController: UIViewController {
     @IBOutlet weak var userCode: UITextField!
     
     @IBAction func submit(sender: AnyObject) {
-        let password:NSString = userCode.text!
-        
-        if (password.isEqualToString("1234") ) {
-            self.performSegueWithIdentifier("reviewSegue", sender: self)
-        }
-        else {
-            let alertView:UIAlertView = UIAlertView()
-            alertView.title = "Invalid Code"
-            alertView.message = "Please enter Code"
-            alertView.delegate = self
-            alertView.addButtonWithTitle("OK")
-            alertView.show()
-        }
-        
-        
+        saveCodeInCoreData(userCode.text!)
     }
     
     func saveCodeInCoreData(code: String) {

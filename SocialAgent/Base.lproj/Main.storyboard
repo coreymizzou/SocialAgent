@@ -212,7 +212,7 @@
         <!--Social Agent-->
         <scene sceneID="X5K-Dg-AmR">
             <objects>
-                <viewController id="Zpe-lg-CwF" sceneMemberID="viewController">
+                <viewController id="Zpe-lg-CwF" customClass="ExamineMyPostViewController" customModule="SocialAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VRn-UK-wWQ"/>
                         <viewControllerLayoutGuide type="bottom" id="1yc-4b-hvm"/>
@@ -270,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnc-sy-UMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="1561"/>
+            <point key="canvasLocation" x="123" y="1713"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="gVR-Lb-IUN">
@@ -699,7 +699,6 @@
                     <tabBarItem key="tabBarItem" title="Review" image="key-32.png" id="DCs-KY-iQU"/>
                     <connections>
                         <outlet property="userCode" destination="aMj-gi-ecg" id="OsM-8V-gqH"/>
-                        <segue destination="Rls-Up-NSW" kind="presentation" identifier="reviewSegue" id="fYC-My-evK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acQ-1W-9eR" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -18,6 +18,7 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
     struct PostInfo {
         var text = ""
         var id = ""
+        var objectID = ""
     }
     var userCode = "1234"
     
@@ -27,7 +28,6 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewWillAppear(animated: Bool) {
         loadMyCode()
         loadPosts()
-        myPostsTableView.reloadData()
     }
     
     func loadMyCode() {
@@ -43,7 +43,7 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
             print("there was an error fetching \(error)")
         }
         
-        if(codes.count != 1) {
+        if(codes.count < 1) {
             print("there was a problem, code auto set to load posts from '1235'")
             userCode = "1235"
         } else {
@@ -57,19 +57,6 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
         let query = PFQuery(className: "Post")
         var postInfoNode = PostInfo()
         query.whereKey("Poster_Id", equalTo: userCode)
-        
-        /*let objects = query.findObjects()
-         
-         if let objects = objects {
-         for object in objects {
-         print(object.objectId)
-         postInfoNode.id = object.valueForKey("Poster_Id")! as! String
-         postInfoNode.text = object.valueForKey("Text")! as! String
-         self.postArray.append(postInfoNode)
-         print(self.postArray.count)
-         }
-         }*/
-        
         
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) in
             if (error == nil) {
@@ -109,8 +96,6 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //TableView data sources methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count at time of loading: ")
-        print(postArray.count)
         return postArray.count
     }
     
