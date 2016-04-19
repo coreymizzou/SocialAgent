@@ -203,6 +203,7 @@
                     <navigationItem key="navigationItem" title="Social Agent" id="2Z9-OF-v15"/>
                     <connections>
                         <outlet property="myPostsTableView" destination="mi0-5E-trc" id="MN2-mf-6rf"/>
+                        <segue destination="Zpe-lg-CwF" kind="push" identifier="showMyPost" id="edJ-WO-RKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WP8-bB-3BJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -270,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnc-sy-UMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123" y="1713"/>
+            <point key="canvasLocation" x="95" y="1671"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="gVR-Lb-IUN">
@@ -759,7 +760,7 @@
         <image name="twitter-logo.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Zl-ag-kTT"/>
+        <segue reference="jMS-wZ-ycS"/>
         <segue reference="lie-Ms-SIo"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,9 +11,9 @@ import UIKit
 class ExamineMyPostViewController: UIViewController {
 
     var postText = String()
-    var totalRating = Float()
-    var dicScore = Float()
-    var revScore = Float()
+    var totalRating = Double()
+    var dicScore = Double()
+    var revScore = Double()
     var numberReviewers = Int()
     
     override func viewDidLoad() {
