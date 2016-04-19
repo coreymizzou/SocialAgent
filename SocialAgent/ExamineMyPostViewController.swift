@@ -19,7 +19,7 @@ class ExamineMyPostViewController: UIViewController {
     @IBOutlet weak var postTextBox: UITextView!
     
     override func viewWillAppear(animated: Bool) {
-        <#code#>
+    
     }
     
     override func viewDidLoad() {
