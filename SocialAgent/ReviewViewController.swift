@@ -50,6 +50,7 @@ class ReviewViewController: UIViewController {
             } else if let postObject = postObject {
                 postObject["ReviewerScore"] = self.revScore
                 postObject["Score"] = self.totalRating
+                postObject["NumberOfReviews"] = self.numberReviewers
                 postObject.saveInBackground()
                 print("score saved")
                 print("\(self.totalRating)")
