@@ -115,6 +115,7 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("performing segue") 
         self.performSegueWithIdentifier("showMyPost", sender: self)
     }
     
@@ -127,6 +128,7 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
                     destination.numberReviewers = postArray[index].numOfReviewers
                     destination.revScore = postArray[index].revScore
                     destination.totalRating = postArray[index].totalScore
+                    print("prepared")
                 }
             }
         }

@@ -22,6 +22,7 @@
 		6798556C1CC524DD00211B68 /* MyPostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6798556B1CC524DD00211B68 /* MyPostsTableViewCell.swift */; };
 		6798556E1CC5260900211B68 /* MyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6798556D1CC5260900211B68 /* MyPostsViewController.swift */; };
 		679855701CC5CF4200211B68 /* ExamineMyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6798556F1CC5CF4200211B68 /* ExamineMyPostViewController.swift */; };
+		679855721CC6A1EC00211B68 /* ReviewPostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679855711CC6A1EC00211B68 /* ReviewPostsTableViewCell.swift */; };
 		67E24E5F1CC1500300877E09 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E24E5E1CC1500300877E09 /* Parse.framework */; };
 		67E24E611CC1501A00877E09 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E24E601CC1501A00877E09 /* Bolts.framework */; };
 		67E24E631CC1507500877E09 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E24E621CC1507500877E09 /* AudioToolbox.framework */; };
@@ -101,6 +102,7 @@
 		6798556B1CC524DD00211B68 /* MyPostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsTableViewCell.swift; sourceTree = "<group>"; };
 		6798556D1CC5260900211B68 /* MyPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsViewController.swift; sourceTree = "<group>"; };
 		6798556F1CC5CF4200211B68 /* ExamineMyPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamineMyPostViewController.swift; sourceTree = "<group>"; };
+		679855711CC6A1EC00211B68 /* ReviewPostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPostsTableViewCell.swift; sourceTree = "<group>"; };
 		67CF67721C8947E2000D1ACC /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		67E24E5E1CC1500300877E09 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		67E24E601CC1501A00877E09 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				6798556B1CC524DD00211B68 /* MyPostsTableViewCell.swift */,
 				6798556D1CC5260900211B68 /* MyPostsViewController.swift */,
 				6798556F1CC5CF4200211B68 /* ExamineMyPostViewController.swift */,
+				679855711CC6A1EC00211B68 /* ReviewPostsTableViewCell.swift */,
 			);
 			path = SocialAgent;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				672BA5B91C7C1CD300E50A2A /* ViewController.swift in Sources */,
 				677AA08B1CBC704100643173 /* facebookFriendsViewController.swift in Sources */,
 				672BA5B71C7C1CD300E50A2A /* AppDelegate.swift in Sources */,
+				679855721CC6A1EC00211B68 /* ReviewPostsTableViewCell.swift in Sources */,
 				79B5F65A1CA367380068B052 /* FriendList.swift in Sources */,
 				79961A251C9A627700C8A9D2 /* grade.swift in Sources */,
 				672BA5BF1C7C1CD300E50A2A /* SocialAgent.xcdatamodeld in Sources */,

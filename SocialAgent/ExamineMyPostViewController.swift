@@ -17,9 +17,18 @@ class ExamineMyPostViewController: UIViewController {
     var numberReviewers = Int()
     
     @IBOutlet weak var postTextBox: UITextView!
+    @IBOutlet weak var overallRatingLabel: UILabel!
+    @IBOutlet weak var dicScoreLabel: UILabel!
+    @IBOutlet weak var revScoreLabel: UILabel!
+    @IBOutlet weak var numReviewersLabel: UILabel!
     
     override func viewWillAppear(animated: Bool) {
-    
+        print("view will appear")
+        postTextBox.text = postText
+        overallRatingLabel.text = "\(totalRating)"
+        dicScoreLabel.text = "\(dicScore)"
+        revScoreLabel.text = "\(revScore)"
+        numReviewersLabel.text = "\(numberReviewers)"
     }
     
     override func viewDidLoad() {
