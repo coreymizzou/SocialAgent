@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class ExamineMyPostViewController: UIViewController {
 
@@ -14,7 +16,15 @@ class ExamineMyPostViewController: UIViewController {
     var totalRating = Double()
     var dicScore = Double()
     var revScore = Double()
-    var numberReviewers = Int()
+    var numberReviewers = Double()
+    var objectId = String()
+    /*
+    @IBOutlet weak var postTextBox: UITextView!
+    @IBOutlet weak var overallRatingLabel: UILabel!
+    @IBOutlet weak var dicScoreLabel: UILabel!
+    @IBOutlet weak var revScoreLabel: UILabel!
+    @IBOutlet weak var numReviewersLabel: UILabel!
+    */
     
     @IBOutlet weak var postTextBox: UITextView!
     @IBOutlet weak var overallRatingLabel: UILabel!
@@ -29,6 +39,18 @@ class ExamineMyPostViewController: UIViewController {
         dicScoreLabel.text = "\(dicScore)"
         revScoreLabel.text = "\(revScore)"
         numReviewersLabel.text = "\(numberReviewers)"
+    }
+    
+    @IBAction func deletePost(sender: AnyObject) {
+        let query = PFQuery(className: "Post")
+        query.getObjectInBackgroundWithId(objectId) { (postObject: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let postObject = postObject {
+                postObject.deleteInBackground()
+                postObject.saveInBackground()
+            }
+        }
     }
     
     override func viewDidLoad() {

@@ -22,7 +22,8 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var dicScore = 0.0
         var revScore = 0.0
         var totalScore = 0.0
-        var numOfReviewers = 0
+        var numOfReviewers = 0.0
+        var objectId = ""
     }
     
     var coreCodes = [NSManagedObject]()
@@ -122,7 +123,8 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
                             postInfoNode.dicScore = object.valueForKey("DictionaryScore") as! Double
                             postInfoNode.revScore = object.valueForKey("ReviewerScore") as! Double
                             postInfoNode.totalScore = object.valueForKey("Score") as! Double
-                            postInfoNode.numOfReviewers = object.valueForKey("NumberOfReviews") as! Int
+                            postInfoNode.numOfReviewers = object.valueForKey("NumberOfReviews") as! Double
+                            postInfoNode.objectId = object.objectId!
                             
                             self.postArray.append(postInfoNode)
                             print(self.postArray.count)
@@ -162,6 +164,22 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = UITableViewCell()
         cell.textLabel?.text = postArray[indexPath.row].text
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMyPost" {
+            if let destination = segue.destinationViewController as? ExamineMyPostViewController {
+                if let index = tableView.indexPathForSelectedRow?.row {
+                    destination.dicScore = postArray[index].dicScore
+                    destination.postText = postArray[index].text
+                    destination.numberReviewers = postArray[index].numOfReviewers
+                    destination.revScore = postArray[index].revScore
+                    destination.totalRating = postArray[index].totalScore
+                    destination.objectId = postArray[index].objectId
+                    print("prepared")
+                }
+            }
+        }
     }
     
     /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

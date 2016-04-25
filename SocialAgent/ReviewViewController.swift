@@ -7,20 +7,50 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class ReviewViewController: UIViewController {
     
     var humanGrade = 0.00
+    var postText = String()
+    var totalRating = Double()
+    var dicScore = Double()
+    var revScore = Double()
+    var numberReviewers = Double()
+    var objectId = String()
+    
+    
+    @IBOutlet weak var postTextView: UITextView!
 
     @IBAction func goodReview(sender: AnyObject) {
         humanGrade = 100.0
+        updateScore(humanGrade)
     }
     
     @IBAction func badReview(sender: AnyObject) {
         humanGrade = 0.00
+        updateScore(humanGrade)
+    }
+    
+    func updateScore(humanGrade: Double) {
+        numberReviewers += 1
+        revScore = ((revScore * (numberReviewers - 1))+(humanGrade))/(numberReviewers)
+        totalRating = (dicScore+revScore)/2
+        let query = PFQuery(className: "Post")
+        query.getObjectInBackgroundWithId(objectId) { (postObject: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let postObject = postObject {
+                postObject["ReviewerScore"] = self.revScore
+                postObject["Score"] = self.totalRating
+                postObject.saveInBackground()
+            }
+        }
     }
     
     override func viewDidLoad() {
+        postTextView.text = postText
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

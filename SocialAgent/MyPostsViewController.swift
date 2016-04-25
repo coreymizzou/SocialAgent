@@ -21,7 +21,8 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
         var dicScore = 0.0
         var revScore = 0.0
         var totalScore = 0.0
-        var numOfReviewers = 0
+        var numOfReviewers = 0.0
+        var objectId = ""
     }
     var userCode = "1234"
     
@@ -73,7 +74,8 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
                         postInfoNode.dicScore = object.valueForKey("DictionaryScore") as! Double
                         postInfoNode.revScore = object.valueForKey("ReviewerScore") as! Double
                         postInfoNode.totalScore = object.valueForKey("Score") as! Double
-                        postInfoNode.numOfReviewers = object.valueForKey("NumberOfReviews") as! Int
+                        postInfoNode.numOfReviewers = object.valueForKey("NumberOfReviews") as! Double
+                        postInfoNode.objectId = object.objectId!
                         
                         self.postArray.append(postInfoNode)
                         print(self.postArray.count)
@@ -128,45 +130,14 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
                     destination.numberReviewers = postArray[index].numOfReviewers
                     destination.revScore = postArray[index].revScore
                     destination.totalRating = postArray[index].totalScore
+                    destination.objectId = postArray[index].objectId
                     print("prepared")
                 }
             }
         }
     }
-    /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("petInfo", sender: self)
-    }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "petInfo"
-        {
-            if let destination = segue.destinationViewController as? PetImWatchingInfoViewController{
-                if let petIndex = tableView.indexPathForSelectedRow?.row {
-                    let corePet = corePets[petIndex]
-                    
-                    let name = corePet.valueForKeyPath("sit_name") as! String
-                    let key = corePet.valueForKey("sit_key") as! String
-                    let bio = corePet.valueForKey("sit_bio") as! String
-                    let feed = corePet.valueForKey("sit_feeding") as! String
-                    let act = corePet.valueForKey("sit_activity") as! String
-                    let contact = corePet.valueForKey("sit_contact") as! String
-                    let number = corePet.valueForKey("sit_number") as! String
-                    
-                    destination.name_of_pet = name
-                    destination.key_of_pet = key
-                    destination.pet_bio_passed = bio
-                    destination.feed_passed = feed
-                    destination.act_passed = act
-                    destination.contact_name = contact
-                    destination.contact_number = number
-                    
-                    
-                    
-                }
-            }
-        }
-    }*/
-
+ 
     /*
     // MARK: - Navigation
 
