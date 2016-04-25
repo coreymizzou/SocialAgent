@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 import Bolts
+import Social
+
 
 class ExamineMyPostViewController: UIViewController {
 
@@ -26,6 +28,9 @@ class ExamineMyPostViewController: UIViewController {
     @IBOutlet weak var numReviewersLabel: UILabel!
     */
     
+    
+    @IBOutlet weak var twitterIcon: UIImageView!
+    @IBOutlet weak var facebookIcon: UIImageView!
     @IBOutlet weak var postTextBox: UITextView!
     @IBOutlet weak var overallRatingLabel: UILabel!
     @IBOutlet weak var dicScoreLabel: UILabel!
@@ -56,6 +61,10 @@ class ExamineMyPostViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        if totalRating < 50 {
+            facebookIcon.hidden = true
+            twitterIcon.hidden = true
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -64,6 +73,40 @@ class ExamineMyPostViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /*
+     //Posting to twitter
+     */
+    @IBAction func twitterButton(sender: AnyObject) {
+        print("clicked")
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
+            let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            twitterSheet.setInitialText(postText)
+            self.presentViewController(twitterSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    /*
+     //Posting to facebook
+     */
+    @IBAction func facebookButton(sender: AnyObject) {
+        print("clicked")
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+            let facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            facebookSheet.setInitialText(postText)
+            self.presentViewController(facebookSheet, animated: true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
 

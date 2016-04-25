@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="85k-bC-NbS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="85k-bC-NbS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -211,7 +211,7 @@
                                     <navigationItem title="Social Agent" id="dDF-Ul-FQf"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bw-01-9ZX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bw-01-9ZX">
                                 <rect key="frame" x="356" y="45" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -241,10 +241,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6z-dd-t11">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6z-dd-t11">
                                 <rect key="frame" x="70" y="80" width="460" height="121"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCx-n3-C8j">
@@ -253,14 +253,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-iOS-App-Logo-Png.png" translatesAutoresizingMaskIntoConstraints="NO" id="JpU-ng-OhN">
-                                <rect key="frame" x="95" y="367" width="88" height="84"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="88" id="eDH-KE-0cx"/>
-                                    <constraint firstAttribute="height" constant="84" id="px5-T1-ik5"/>
-                                </constraints>
-                            </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="zIe-Y5-j3c">
                                 <rect key="frame" x="239" y="367" width="88" height="84"/>
                                 <gestureRecognizers/>
@@ -268,6 +260,9 @@
                                     <constraint firstAttribute="height" constant="84" id="D66-bW-PbS"/>
                                     <constraint firstAttribute="width" constant="88" id="JQy-8V-X4D"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="16i-iQ-wYa" appends="YES" id="mgt-kR-OqI"/>
+                                </connections>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cannot post to social media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISJ-0x-F9T">
                                 <rect key="frame" x="120" y="383" width="203" height="18"/>
@@ -307,6 +302,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-iOS-App-Logo-Png.png" translatesAutoresizingMaskIntoConstraints="NO" id="JpU-ng-OhN">
+                                <rect key="frame" x="95" y="367" width="88" height="84"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="eDH-KE-0cx"/>
+                                    <constraint firstAttribute="height" constant="84" id="px5-T1-ik5"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="XSb-yd-Hmt" appends="YES" id="yQm-NW-yvq"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -347,13 +353,25 @@
                     <navigationItem key="navigationItem" title="Social Agent" id="yli-tp-neN"/>
                     <connections>
                         <outlet property="dicScoreLabel" destination="aQ1-gC-ri3" id="eG0-8o-dXF"/>
+                        <outlet property="facebookIcon" destination="JpU-ng-OhN" id="Zrf-hT-rTg"/>
                         <outlet property="numReviewersLabel" destination="NfO-kV-fKM" id="pHn-YC-bTh"/>
                         <outlet property="overallRatingLabel" destination="sOe-cc-IPf" id="Q7f-Vs-jZy"/>
                         <outlet property="postTextBox" destination="C6z-dd-t11" id="TAS-iK-Twz"/>
                         <outlet property="revScoreLabel" destination="cTL-c2-STC" id="8Ez-PV-T1Q"/>
+                        <outlet property="twitterIcon" destination="zIe-Y5-j3c" id="OXs-Cw-ZKa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnc-sy-UMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="XSb-yd-Hmt">
+                    <connections>
+                        <action selector="facebookButton:" destination="Zpe-lg-CwF" id="r2C-ZR-ZcD"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="16i-iQ-wYa">
+                    <connections>
+                        <action selector="twitterButton:" destination="Zpe-lg-CwF" id="fsV-8r-8Sc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="95" y="1671"/>
         </scene>
@@ -474,7 +492,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7Z-wR-F5Y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Post to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7Z-wR-F5Y">
                                 <rect key="frame" x="270" y="396" width="59" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="iF0-Av-1qt"/>
@@ -483,13 +501,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cannot post to social media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7a-ip-lKS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cannot post to social media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7a-ip-lKS">
                                 <rect key="frame" x="193" y="430" width="213" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-iOS-App-Logo-Png.png" translatesAutoresizingMaskIntoConstraints="NO" id="ypk-vU-kxD">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Facebook-iOS-App-Logo-Png.png" translatesAutoresizingMaskIntoConstraints="NO" id="ypk-vU-kxD">
                                 <rect key="frame" x="209" y="430" width="88" height="84"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -508,7 +526,7 @@
                                     <segue destination="9hY-Fw-2x8" kind="unwind" unwindAction="unwindToPostViewController:" id="3a7-1b-vas"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="RJw-ac-axd">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="twitter-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="RJw-ac-axd">
                                 <rect key="frame" x="311" y="430" width="88" height="84"/>
                                 <gestureRecognizers/>
                                 <constraints>
