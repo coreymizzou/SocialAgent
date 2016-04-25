@@ -49,8 +49,10 @@ class ExamineMyPostViewController: UIViewController {
             } else if let postObject = postObject {
                 postObject.deleteInBackground()
                 postObject.saveInBackground()
+                print("object deleted")
             }
         }
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     override func viewDidLoad() {

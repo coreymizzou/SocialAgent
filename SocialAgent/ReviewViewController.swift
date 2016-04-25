@@ -33,6 +33,12 @@ class ReviewViewController: UIViewController {
         updateScore(humanGrade)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        print("view will appear")
+        postTextView.text = postText
+    }
+
+    
     func updateScore(humanGrade: Double) {
         numberReviewers += 1
         revScore = ((revScore * (numberReviewers - 1))+(humanGrade))/(numberReviewers)
@@ -45,12 +51,15 @@ class ReviewViewController: UIViewController {
                 postObject["ReviewerScore"] = self.revScore
                 postObject["Score"] = self.totalRating
                 postObject.saveInBackground()
+                print("score saved")
+                print("\(self.totalRating)")
             }
         }
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     override func viewDidLoad() {
-        postTextView.text = postText
+        print(postText)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

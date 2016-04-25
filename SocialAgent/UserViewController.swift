@@ -37,6 +37,11 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         loadPosts()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        loadCodes()
+        loadPosts()
+    }
+    
     func saveCodeInCoreData(code: String) {
         let appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         let context:NSManagedObjectContext = appDel.managedObjectContext
@@ -167,8 +172,8 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showMyPost" {
-            if let destination = segue.destinationViewController as? ExamineMyPostViewController {
+        if segue.identifier == "reviewPostSegue" {
+            if let destination = segue.destinationViewController as? ReviewViewController {
                 if let index = tableView.indexPathForSelectedRow?.row {
                     destination.dicScore = postArray[index].dicScore
                     destination.postText = postArray[index].text
@@ -182,10 +187,10 @@ class UserViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    /*func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("performing segue")
-        self.performSegueWithIdentifier("showMyPost", sender: self)
-    }*/
+        self.performSegueWithIdentifier("reviewPostSegue", sender: self)
+    }
 
     
 
