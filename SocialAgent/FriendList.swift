@@ -71,6 +71,7 @@ class FriendList: UIViewController {
     @IBOutlet weak var codeLabel: UILabel!
 
     override func viewDidLoad() {
+        loadMyCode()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
