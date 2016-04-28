@@ -12,6 +12,7 @@ import Social
 import FBSDKCoreKit
 import UIKit
 import FBSDKShareKit
+import CoreData
 
 
 class FriendList: UIViewController {
@@ -67,6 +68,7 @@ class FriendList: UIViewController {
      */
     //TESTING
 
+    @IBOutlet weak var codeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +78,28 @@ class FriendList: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadMyCode() {
+        var codes = [NSManagedObject]()
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        let request = NSFetchRequest(entityName: "MyCode")
+        
+        do {
+            let results = try context.executeFetchRequest(request)
+            codes = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("there was an error fetching \(error)")
+        }
+        
+        if(codes.count < 1) {
+            print("there was a problem, no code to load")
+        } else {
+            let code = codes[codes.count - 1]
+            codeLabel.text = (code.valueForKey("code") as? String)!
+        }
+        
     }
 }
 //facebook login manager

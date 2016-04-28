@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="85k-bC-NbS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="85k-bC-NbS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -639,63 +639,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-iOS-App-Logo-Png.png" translatesAutoresizingMaskIntoConstraints="NO" id="mgR-0v-bkc">
-                                <rect key="frame" x="183" y="261" width="98" height="92"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="92" id="EdP-8x-oKl"/>
-                                    <constraint firstAttribute="width" constant="98" id="EiT-Ou-Bxc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="lqM-75-Z2w"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="MfP-4B-xmX" appends="YES" id="ZAU-Nt-4Ng"/>
-                                </connections>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick From Your Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q77-gd-pEl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You don't have a code. Login to Facebook" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="none" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Q77-gd-pEl">
                                 <rect key="frame" x="201" y="53" width="199" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gjH-yt-peR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Copy-Paste this code into a message to a trusted friend to allow them to begin reviewing your posts" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gjH-yt-peR">
                                 <rect key="frame" x="183" y="114" width="235" height="118"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="2gh-lL-3wk"/>
                                     <constraint firstAttribute="width" constant="235" id="ssB-v9-GVt"/>
                                 </constraints>
-                                <string key="text">Select friends from either platform to send your unique reviewer code to. They will be able to see and review your potential posts.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wuT-As-km9">
-                                <rect key="frame" x="302" y="261" width="98" height="92"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="98" id="K7k-4S-kXW"/>
-                                    <constraint firstAttribute="height" constant="92" id="kBP-wP-m6D"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="eMo-xN-gVV" appends="YES" id="y7t-iw-hLA"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Q77-gd-pEl" firstAttribute="trailing" secondItem="wuT-As-km9" secondAttribute="trailing" id="3ZH-dA-iF8"/>
                             <constraint firstItem="gjH-yt-peR" firstAttribute="centerX" secondItem="sf6-ai-cAo" secondAttribute="centerX" id="638-sC-XHN"/>
                             <constraint firstItem="gjH-yt-peR" firstAttribute="top" secondItem="sf6-ai-cAo" secondAttribute="top" constant="114" id="9Z1-4g-LaW"/>
-                            <constraint firstItem="gjH-yt-peR" firstAttribute="leading" secondItem="mgR-0v-bkc" secondAttribute="leading" id="Dxf-QQ-Le1"/>
-                            <constraint firstItem="xPx-dB-c85" firstAttribute="top" secondItem="wuT-As-km9" secondAttribute="bottom" constant="198" id="IMn-9k-RTJ"/>
-                            <constraint firstItem="wuT-As-km9" firstAttribute="leading" secondItem="mgR-0v-bkc" secondAttribute="trailing" constant="21" id="OVC-O4-NGP"/>
-                            <constraint firstItem="wuT-As-km9" firstAttribute="top" secondItem="mgR-0v-bkc" secondAttribute="top" id="QD0-pP-JLd"/>
                             <constraint firstItem="Q77-gd-pEl" firstAttribute="top" secondItem="GMk-Tc-FF7" secondAttribute="bottom" constant="33" id="Uf7-L5-Q3H"/>
-                            <constraint firstItem="wuT-As-km9" firstAttribute="bottom" secondItem="mgR-0v-bkc" secondAttribute="bottom" id="bqY-mf-KyK"/>
-                            <constraint firstItem="wuT-As-km9" firstAttribute="top" secondItem="gjH-yt-peR" secondAttribute="bottom" constant="29" id="iUS-yx-cbg"/>
                             <constraint firstItem="Q77-gd-pEl" firstAttribute="centerX" secondItem="gjH-yt-peR" secondAttribute="centerX" id="y4Q-3k-50Y"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="tnE-ML-x5Y"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="tnE-ML-x5Y"/>
+                    <connections>
+                        <outlet property="codeLabel" destination="Q77-gd-pEl" id="dI1-lR-n2z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLK-s5-bqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="MfP-4B-xmX">
@@ -819,8 +791,8 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="a6C-p5-Cob"/>
                         <segue destination="CHK-co-ZZ2" kind="relationship" relationship="viewControllers" id="pgf-cZ-dVA"/>
                         <segue destination="HIs-EF-Jlz" kind="relationship" relationship="viewControllers" id="w6Y-ja-FMi"/>
-                        <segue destination="Wu2-J2-rrq" kind="relationship" relationship="viewControllers" id="iGC-on-Ub3"/>
                         <segue destination="YsU-Yz-5E9" kind="relationship" relationship="viewControllers" id="fI6-Ux-Y2u"/>
+                        <segue destination="Wu2-J2-rrq" kind="relationship" relationship="viewControllers" id="iGC-on-Ub3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6i-Nq-DEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
